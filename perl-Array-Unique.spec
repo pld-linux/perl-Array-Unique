@@ -48,7 +48,8 @@ dwóch tablic
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor 
 %{__make}
-%{!?_without_test:%{__make} test}
+
+%{!?_without_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
