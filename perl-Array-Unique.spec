@@ -7,7 +7,7 @@
 %define	pnam	Unique
 Summary:	Array::Unique - tieable array that allows only unique values
 Summary(pl):	Array::Unique - macierz pozwalaj±ca jedynie na unikalne warto¶ci
-Name:		perl-%{pdir}-%{pnam}
+Name:		perl-Array-Unique
 Version:	0.04
 Release:	1
 License:	GPL or Artistic
