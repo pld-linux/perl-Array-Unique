@@ -1,7 +1,7 @@
-#
+
 # Conditional build:
-# _without_tests - do not perform "make test"
-#
+%bcond_without	tests	#do not perform "make test"
+
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Array
 %define	pnam	Unique
@@ -23,15 +23,15 @@ Summary(sv):	%{pdir}::%{pnam} Perlmodul
 Summary(uk):	íÏÄÕÌØ ÄÌÑ Perl %{pdir}::%{pnam}
 Summary(zh_CN):	%{pdir}::%{pnam} Perl Ä£¿é
 Name:		perl-%{pdir}-%{pnam}
-Version:	0.03
-Release:	2
+Version:	0.04
+Release:	1
 License:	GPL/Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	076d841a59620d2a672a287f32f53673
+# Source0-md5:	294f2fb56da686ee8044dccce5c18897
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 5.005
-%{!?_without_tests:BuildRequires:	perl-Tie-IxHash}
+%{?with_tests:BuildRequires:	perl-Tie-IxHash}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -50,12 +50,13 @@ dwóch tablic
 	INSTALLDIRS=vendor
 %{__make}
 
-%{!?_without_tests:%{__make} test}
+%{?with_tests:%{__make} test}
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -64,5 +65,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes README
 %{perl_vendorlib}/%{pdir}/%{pnam}.pm
-%{perl_vendorlib}/%{pdir}/%{pnam}
-%{_mandir}/man3/*.3pm*
+%{_mandir}/man3/*
