@@ -1,3 +1,7 @@
+#
+# Conditional build:
+# _without_tests - do not perform "make test"
+#
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Array
 %define	pnam	Unique
@@ -26,9 +30,7 @@ Group:		Development/Languages/Perl
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
 BuildRequires:	rpm-perlprov >= 3.0.3-16
 BuildRequires:	perl >= 5.005
-%if %{!?_without_test:0}
-BuildRequires:	perl-Tie-IxHash
-%endif
+%{!?_without_tests:BuildRequires:	perl-Tie-IxHash}
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -60,4 +62,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc Changes README
 %{perl_sitelib}/%{pdir}/%{pnam}.pm
 %{perl_sitelib}/%{pdir}/%{pnam}
-%{_mandir}/man3/*.3pm.gz
+%{_mandir}/man3/*.3pm*
