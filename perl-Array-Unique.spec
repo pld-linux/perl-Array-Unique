@@ -45,7 +45,7 @@ dwóch tablic
 %setup -q -n %{pdir}-%{pnam}-%{version}
 
 %build
-perl Makefile.PL
+%{__perl} Makefile.PL
 %{__make}
 %{!?_without_test:%{__make} test}
 
