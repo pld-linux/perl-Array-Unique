@@ -6,7 +6,7 @@
 %define		pdir	Array
 %define		pnam	Unique
 Summary:	Array::Unique - tieable array that allows only unique values
-Summary(pl):	Array::Unique - macierz pozwalaj±ca jedynie na unikalne warto¶ci
+Summary(pl.UTF-8):   Array::Unique - macierz pozwalajÄ…ca jedynie na unikalne wartoÅ›ci
 Name:		perl-Array-Unique
 Version:	0.06
 Release:	1
@@ -25,11 +25,11 @@ Array::Compare is a Perl module lets you create an array which will
 allow only one occurence of any value. Attempt to put in an already
 existing value has no effect.
 
-%description -l pl
-Array::Compare jest rozszerzeniem Perla umo¿liwiaj±cym tworzenie
-tablic akceptuj±cych jedynie pojedyncze wyst±pienia poszczególnych
-warto¶ci. Proba dopisania do tablicy istniej±cej ju¿ w niej warto¶ci
-bêdzie ignorowana.
+%description -l pl.UTF-8
+Array::Compare jest rozszerzeniem Perla umoÅ¼liwiajÄ…cym tworzenie
+tablic akceptujÄ…cych jedynie pojedyncze wystÄ…pienia poszczegÃ³lnych
+wartoÅ›ci. Proba dopisania do tablicy istniejÄ…cej juÅ¼ w niej wartoÅ›ci
+bÄ™dzie ignorowana.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
