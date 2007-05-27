@@ -1,7 +1,7 @@
-
+#
 # Conditional build:
 %bcond_without	tests	#do not perform "make test"
-
+#
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Array
 %define		pnam	Unique
@@ -12,11 +12,12 @@ Version:	0.07
 Release:	1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Array/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	1490b6b3ce9e9d3affc226a79a18c6bb
-BuildRequires:	rpm-perlprov >= 4.1-13
-BuildRequires:	perl-devel >= 1:5.8.0
+URL:		http://search.cpan.org/dist/Array-Unique/
 %{?with_tests:BuildRequires:	perl-Tie-IxHash}
+BuildRequires:	perl-devel >= 1:5.8.0
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -53,5 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc Changes README
-%{perl_vendorlib}/%{pdir}/%{pnam}.pm
+%{perl_vendorlib}/Array/Unique.pm
 %{_mandir}/man3/*
