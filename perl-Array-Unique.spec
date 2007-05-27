@@ -8,12 +8,12 @@
 Summary:	Array::Unique - tieable array that allows only unique values
 Summary(pl.UTF-8):	Array::Unique - macierz pozwalająca jedynie na unikalne wartości
 Name:		perl-Array-Unique
-Version:	0.06
+Version:	0.07
 Release:	1
 License:	GPL or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{pnam}-%{version}.tar.gz
-# Source0-md5:	a016165424d0cbff17e92c142704ae55
+# Source0-md5:	1490b6b3ce9e9d3affc226a79a18c6bb
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	perl-devel >= 1:5.8.0
 %{?with_tests:BuildRequires:	perl-Tie-IxHash}
